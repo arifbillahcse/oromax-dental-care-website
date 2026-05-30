@@ -8,6 +8,7 @@
 
   function init() {
     setupMobileNav();
+    setupFaq();
     highlightActiveLink();
     setFooterYear();
     setupHeaderScroll();
@@ -58,6 +59,25 @@
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* FAQ accordion */
+  function setupFaq() {
+    document.querySelectorAll(".faq-question").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("is-open");
+        // Close all open items first
+        document.querySelectorAll(".faq-item.is-open").forEach(function (open) {
+          open.classList.remove("is-open");
+          open.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        });
+        if (!isOpen) {
+          item.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
   }
 
   // Wait for partials to be loaded before wiring up the UI.
