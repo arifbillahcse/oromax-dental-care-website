@@ -50,6 +50,10 @@ python3 -m http.server 8000
 
 ## Status
 
-Foundation complete: file structure, shared header, shared footer, base styles,
-mobile navigation and the floating WhatsApp button. Individual page content is
-added page by page.
+All pages complete with content: Home, About, Services (10 services), Gallery,
+Appointment (WhatsApp booking) and Contact (map + opening hours). Shared header,
+footer, mobile navigation and floating WhatsApp button are in place.
+
+Most images use free stock photos (Unsplash) as placeholders — replace them with
+the clinic's own photos by dropping files in `images/` and updating the `src`
+paths.
