@@ -1,6 +1,8 @@
-# Oro Max Dental Care — Mathbaria
+# ওরো ম্যাক্স ডেন্টাল কেয়ার — মঠবাড়িয়া (Oro Max Dental Care)
 
-Website for **Oro Max Dental Care**, Mirukhali Road, Mathbaria, Pirojpur, Bangladesh.
+Website for **ওরো ম্যাক্স ডেন্টাল কেয়ার** (Oro Max Dental Care), Mirukhali Road, Mathbaria, Pirojpur, Bangladesh.
+
+> **Note:** This branch (`claude/bengali-translation`) contains the **fully Bengali (বাংলা)** version of the site. All page content, navigation, footer and the WhatsApp booking message are in Bengali. The interface uses the **Hind Siliguri** Google Font for clean Bengali typography.
 
 A static website (HTML + CSS + vanilla JS) for showcasing dental services and
 booking appointments. Built mobile-first with a clean white + dental teal/blue theme.

@@ -47,7 +47,7 @@
   /* Auto-update the year in the footer */
   function setFooterYear() {
     const el = document.getElementById("footer-year");
-    if (el) el.textContent = new Date().getFullYear();
+    if (el) el.textContent = new Date().getFullYear().toLocaleString("bn-BD", { useGrouping: false });
   }
 
   /* Add a shadow/solid background to the header on scroll */

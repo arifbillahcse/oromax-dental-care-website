@@ -1,7 +1,10 @@
 /* ============================================================
-   Oro Max Dental Care — Global Stylesheet
-   Palette: clean white + dental teal/blue (no brand color given)
+   Oro Max Dental Care — Global Stylesheet (Bengali)
+   Palette: clean white + dental teal/blue
    ============================================================ */
+
+/* ---------- Bengali web font ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap");
 
 /* ---------- Design tokens ---------- */
 :root {
@@ -28,7 +31,7 @@
   --container: 1140px;
   --header-h: 72px;
 
-  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --font: "Hind Siliguri", "Noto Sans Bengali", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* ---------- Reset / base ---------- */

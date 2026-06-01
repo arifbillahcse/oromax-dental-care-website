@@ -30,23 +30,23 @@
       var message = form.elements["message"].value.trim();
 
       if (!name || !phone || !date) {
-        showStatus("Please fill in your name, phone and preferred date.", true);
+        showStatus("অনুগ্রহ করে আপনার নাম, ফোন ও পছন্দের তারিখ পূরণ করুন।", true);
         return;
       }
 
       var lines = [
-        "*New Appointment Request — Oro Max Dental Care*",
+        "*নতুন অ্যাপয়েন্টমেন্ট অনুরোধ — ওরো ম্যাক্স ডেন্টাল কেয়ার*",
         "",
-        "👤 Name: " + name,
-        "📞 Phone: " + phone,
-        "📅 Preferred Date: " + formatDate(date),
+        "👤 নাম: " + name,
+        "📞 ফোন: " + phone,
+        "📅 পছন্দের তারিখ: " + formatDate(date),
       ];
-      if (message) lines.push("📝 Message: " + message);
+      if (message) lines.push("📝 বার্তা: " + message);
 
       var text = encodeURIComponent(lines.join("\n"));
       var url = "https://wa.me/" + CLINIC_WHATSAPP + "?text=" + text;
 
-      showStatus("Opening WhatsApp to confirm your appointment…", false);
+      showStatus("অ্যাপয়েন্টমেন্ট নিশ্চিত করতে হোয়াটসঅ্যাপ খোলা হচ্ছে…", false);
       window.open(url, "_blank", "noopener");
       form.reset();
     });
@@ -55,7 +55,7 @@
   function formatDate(value) {
     var d = new Date(value + "T00:00:00");
     if (isNaN(d)) return value;
-    return d.toLocaleDateString("en-GB", {
+    return d.toLocaleDateString("bn-BD", {
       weekday: "long",
       year: "numeric",
       month: "long",
