@@ -618,9 +618,12 @@ h1, h2, h3 { line-height: 1.25; color: var(--blue-900); margin-top: 0; }
    INNER PAGE BANNER (about / services / gallery / etc.)
    ============================================================ */
 .page-banner {
-  background:
-    linear-gradient(135deg, rgba(15, 110, 122, 0.93), rgba(11, 61, 79, 0.93)),
-    url("https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80") center/cover;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0),
+    linear-gradient(135deg, rgba(15,110,122,0.93), rgba(11,61,79,0.93)),
+    url("https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80");
+  background-size: 28px 28px, cover, cover;
+  background-position: 0 0, center, center;
   color: var(--white);
   text-align: center;
   padding-block: 64px;
@@ -1074,4 +1077,119 @@ textarea.form-control { resize: vertical; min-height: 110px; }
   .hero-eyebrow,
   .hero-stats.is-visible .hero-stat { animation: none !important; }
   .btn::after { display: none; }
+}
+
+/* ============================================================
+   VISUAL POLISH — additional enhancements
+   ============================================================ */
+
+/* 1. Feature card icon: distinct soft colour per position */
+.feature-grid .feature-card:nth-child(1) .feature-icon { background: #e0f7fa; }
+.feature-grid .feature-card:nth-child(2) .feature-icon { background: #e8f4fd; }
+.feature-grid .feature-card:nth-child(3) .feature-icon { background: #e8f5e9; }
+.feature-grid .feature-card:nth-child(4) .feature-icon { background: #fce4ec; }
+/* hover gradient override is already set above via .feature-card:hover .feature-icon */
+
+/* 2. Steps connector line */
+.steps-grid { position: relative; }
+.steps-grid::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: calc(16.67% + 18px);
+  right: calc(16.67% + 18px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal-500), var(--accent));
+  z-index: 0;
+}
+.step-card { z-index: 1; position: relative; }
+@media (max-width: 760px) { .steps-grid::before { display: none; } }
+
+/* 3. CTA banner dot texture */
+.cta-banner {
+  background-image: radial-gradient(circle, var(--border) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* 5. Gallery first item spans 2 columns */
+.gallery-grid .gallery-item:first-child {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+@media (max-width: 520px) {
+  .gallery-grid .gallery-item:first-child { grid-column: span 1; aspect-ratio: 4/3; }
+}
+
+/* 6. Service detail alternating left border accent */
+.service-detail { border-left: 3px solid transparent; }
+.service-list .service-detail:nth-child(odd)  { border-left-color: var(--teal-500); }
+.service-list .service-detail:nth-child(even) { border-left-color: var(--accent); }
+
+/* 7. Doctor card photo gradient overlay */
+.doctor-photo-wrap { position: relative; }
+.doctor-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 50%;
+  background: linear-gradient(transparent, rgba(11,61,79,0.06));
+  pointer-events: none;
+}
+
+/* 8. Mission/Vision card nth-child border colours */
+.mv-card:nth-child(1) { border-left-color: var(--teal-600); }
+.mv-card:nth-child(2) { border-left-color: var(--accent); }
+.mv-card:nth-child(3) { border-left-color: #5c9ea8; }
+.mv-card:nth-child(4) { border-left-color: #2a9d8f; }
+
+/* 9. Service preview card arrow hint on hover */
+.service-card { position: relative; }
+.service-card h3::after {
+  content: " →";
+  opacity: 0;
+  color: var(--teal-500);
+  transition: opacity 0.2s ease;
+}
+.service-card:hover h3::after { opacity: 1; }
+
+/* 10. Hours list zebra striping */
+.hours-list li:nth-child(even) { background: var(--bg-soft); padding-inline: 8px; border-radius: 6px; }
+
+/* 11. Info icon colour variants */
+.info-list li:nth-child(1) .info-icon { background: #e0f7fa; }
+.info-list li:nth-child(2) .info-icon { background: #e8f5e9; }
+.info-list li:nth-child(3) .info-icon { background: #fce4ec; }
+
+/* 12. Section eyebrow dot prefix */
+.section-eyebrow::before {
+  content: "●";
+  font-size: 0.5em;
+  vertical-align: middle;
+  margin-right: 6px;
+  opacity: 0.7;
+}
+
+/* 13. Story pull-quote */
+.story-quote {
+  margin: 20px 0 24px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--teal-500);
+  background: var(--teal-100);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--blue-900);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* 14. FAQ open state highlight */
+.faq-item.is-open { background: var(--bg-soft); }
+.faq-item.is-open .faq-question { background: var(--teal-100); color: var(--teal-700); }
+
+/* 15. Hero stats inner glow when visible */
+.hero-stats {
+  transition: box-shadow 0.4s ease;
+}
+.hero-stats.animate.is-visible {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.25), 0 8px 28px rgba(11,61,79,0.3);
 }
