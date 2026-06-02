@@ -12,6 +12,25 @@
     highlightActiveLink();
     setFooterYear();
     setupHeaderScroll();
+    setupScrollProgress();
+  }
+
+  /* Thin progress bar at the top showing page scroll position */
+  function setupScrollProgress() {
+    if (document.querySelector(".scroll-progress")) return;
+    var bar = document.createElement("div");
+    bar.className = "scroll-progress";
+    document.body.appendChild(bar);
+
+    var update = function () {
+      var h = document.documentElement;
+      var scrollable = h.scrollHeight - h.clientHeight;
+      var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+      bar.style.width = pct + "%";
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
   }
 
   /* Mobile hamburger menu */
