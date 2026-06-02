@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ---------- Bengali web font ---------- */
-@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap");
 
 /* ---------- Design tokens ---------- */
 :root {
@@ -31,7 +31,7 @@
   --container: 1140px;
   --header-h: 72px;
 
-  --font: "Hind Siliguri", "Noto Sans Bengali", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --font: "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* ---------- Reset / base ---------- */
